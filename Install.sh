@@ -9,3 +9,4 @@ git init aha
 cd aha && git pull https://github.com/theZiz/aha.git
 cd ../Cipherscan && git pull https://github.com/jvehent/cipherscan.git
 cd ../SSLTest && git pull https://github.com/drwetter/testssl.sh.git
+cd ../aha && :make && :make install
