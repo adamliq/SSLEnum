@@ -52,7 +52,11 @@ do
                 if [ $? -eq 0 ]
                 then
                         tput setaf 1 ; echo "Running tests on $ipaddr:$port"
-						echo "<h1>$ipaddr:$port</h1>" > /root/Project/Results/SSL/SSL_Results_$ipaddr:$port.html && echo "<h2>testssl.sh --ssl-native -U -s -f -p -S -P -H -E --quiet $ipaddr:$port</h2>" >> /root/Project/Results/SSL/SSL_Results_$ipaddr:$port.html && /root/Downloads/testssl.sh-master/testssl.sh --ssl-native -U -s -f -p -S -P -H -E --quiet $ipaddr:$port | aha >> /root/Project/Results/SSL/SSL_Results_$ipaddr:$port.html && echo "<h2>cipherscan --curves --sigalg $ipaddr:$port</h2>" >> /root/Project/Results/SSL/SSL_Results_$ipaddr:$port.html && /root/Downloads/cipherscan-master/cipherscan --curves --sigalg $ipaddr:$port 2> /dev/null | aha >> /root/Project/Results/SSL/SSL_Results_$ipaddr:$port.html
+						echo "<h1>$ipaddr:$port</h1>" > Results/SSL/SSL_Results_$ipaddr:$port.html &&
+						echo "<h2>testssl.sh --ssl-native -U -s -f -p -S -P -H -E --quiet $ipaddr:$port</h2>" >> Results/SSL/SSL_Results_$ipaddr:$port.html &&
+						SSLTest/testssl.sh --ssl-native -U -s -f -p -S -P -H -E --quiet $ipaddr:$port | aha >> Results/SSL/SSL_Results_$ipaddr:$port.html && 
+						echo "<h2>cipherscan --curves --sigalg $ipaddr:$port</h2>" >> Results/SSL/SSL_Results_$ipaddr:$port.html && 
+						Cipherscan/cipherscan --curves --sigalg $ipaddr:$port 2> /dev/null | aha >> Results/SSL/SSL_Results_$ipaddr:$port.html
                 fi
         fi
 done < "$nmapcsv"
