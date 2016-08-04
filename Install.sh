@@ -1,6 +1,7 @@
 #!/bin/bash
 git --version || echo "GIT not installed. Please install GIT"
 apt-get install -y make
+apt-get install -y xmlstarlet
 mkdir Cipherscan
 mkdir SSLTest
 mkdir aha
