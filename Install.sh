@@ -14,3 +14,4 @@ cd ../Cipherscan && git pull https://github.com/jvehent/cipherscan.git
 cd ../SSLTest && git pull https://github.com/drwetter/testssl.sh.git
 cd ../rdpseccheck && git pull https://github.com/portcullislabs/rdp-sec-check.git
 cd ../aha && make && make install
+cd ../rdpseccheck && (echo y;echo o conf prerequisites_policy follow;echo o conf commit)|cpan Encoding::BER
