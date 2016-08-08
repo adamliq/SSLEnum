@@ -26,4 +26,4 @@ cd ../Osaft && git pull https://github.com/OWASP/O-Saft.git
 cd ../Osaft && ./INSTALL-devel.sh
 cd ../aha && make && make install
 cd ../rdpseccheck && (echo y;echo o conf prerequisites_policy follow;echo o conf commit)|cpan Encoding::BER
-chmod +x *.sh
+cd .. && chmod +x *.sh
