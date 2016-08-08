@@ -10,7 +10,7 @@
 #Syntax
 #script.sh <ipaddress:port> <opensslcheck y/n>
 #Example
-#script.sh "192.168.1.0/24"
+#script.sh "192.168.1.0:443" "n"
 #
 echo $1
 echo $2
