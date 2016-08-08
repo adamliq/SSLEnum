@@ -1,4 +1,10 @@
 # SSLEnum
+#Description
+Scripts utilised for the vulnerability/Compliancy assessment of;
+* SSL/TLS Endpoints
+* RDP Endpoints
+* SSH Endpoints
+
 ##Requirements
 Tested on Kali Rolling 2016.1
 
