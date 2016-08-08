@@ -61,11 +61,39 @@ testssl_fromnmap "/home/nmap_scan.xml" "192.168.1.0/24" "/home/nmap_output.csv" 
 **Syntax:**
 
 ```
-testssh_direct <IPAddress>:<port>
+testssh_direct <ipaddress:port>
 ```
 
 **Example:**
 
 ```
 testssh_direct "192.168.1.0:22"
+```
+----
+####Testrdp_direct
+
+**Syntax:**
+
+```
+testrdp_direct <ipaddress:port> <Skip SSL connectivity check y/n>
+```
+
+**Example:**
+
+```
+testrdp_direct "192.168.1.0:3389" "n"
+```
+----
+####Testrdp_fromnmap
+
+**Syntax:**
+
+```
+testrdp_direct <nmapxmloutput_Location> <IP range for nmap> <nmap csv output location> <new scan or leave blank if old>
+```
+
+**Example:**
+
+```
+testrdp_direct "/home/nmap_scan.xml" "192.168.1.0/24" "/home/nmap_output.csv" "new"
 ```
