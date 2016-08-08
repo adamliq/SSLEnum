@@ -4,11 +4,11 @@ Tested on Kali Rolling 2016.1
 
 ##Tools
 
-SSLTest.sh
-Cipherscan
-XMLStarlet
-rdp-sec-check
-AHA (Ansi HTML Adaptor)
+* SSLTest.sh
+* Cipherscan
+* XMLStarlet
+* rdp-sec-check
+* AHA (Ansi HTML Adaptor)
 
 ##Install
 
