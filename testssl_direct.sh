@@ -34,8 +34,8 @@ then
 		SSLTest/testssl.sh --ssl-native -U -s -f -p -S -P -H -E --quiet $ipaddr:$port | aha >> Results/SSL/SSL_Results_$ipaddr:$port.html && 
 		echo "<h2>cipherscan --curves --sigalg $ipaddr:$port</h2>" >> Results/SSL/SSL_Results_$ipaddr:$port.html && 
 		Cipherscan/cipherscan --curves --sigalg $ipaddr:$port 2> /dev/null | aha >> Results/SSL/SSL_Results_$ipaddr:$port.html &&
-		echo "<h2>o-saft.pl +vulns --ignore-no-conn --no-cert --no-dns --no-http --no-openssl --no-sni --no-warning --no-hint --no-header $ipaddr:$port</h2>" >> /root/Project/Results/SSL/SSL_Results_$ipaddr:$port.html &&
-		/root/Downloads/Osaft/o-saft.pl +vulns --ignore-no-conn --no-cert --no-dns --no-http --no-openssl --no-sni --no-warning --no-hint --no-header  $ipaddr:$port 2>/dev/null | grep "Lucky" | aha >> /root/Project/Results/SSL/SSL_Results_$ipaddr:$port.html
+		echo "<h2>o-saft.pl +vulns --ignore-no-conn --no-cert --no-dns --no-http --no-openssl --no-sni --no-warning --no-hint --no-header $ipaddr:$port</h2>" >> Results/SSL/SSL_Results_$ipaddr:$port.html &&
+		Osaft/o-saft.pl +vulns --ignore-no-conn --no-cert --no-dns --no-http --no-openssl --no-sni --no-warning --no-hint --no-header  $ipaddr:$port 2>/dev/null | grep "Lucky" | aha >> Results/SSL/SSL_Results_$ipaddr:$port.html
 	fi
 
 else
@@ -45,6 +45,6 @@ else
 		SSLTest/testssl.sh --ssl-native -U -s -f -p -S -P -H -E --quiet $ipaddr:$port | aha >> Results/SSL/SSL_Results_$ipaddr:$port.html && 
 		echo "<h2>cipherscan --curves --sigalg $ipaddr:$port</h2>" >> Results/SSL/SSL_Results_$ipaddr:$port.html && 
 		Cipherscan/cipherscan --curves --sigalg $ipaddr:$port 2> /dev/null | aha >> Results/SSL/SSL_Results_$ipaddr:$port.html &&
-		echo "<h2>o-saft.pl +vulns --ignore-no-conn --no-cert --no-dns --no-http --no-openssl --no-sni --no-warning --no-hint --no-header $ipaddr:$port</h2>" >> /root/Project/Results/SSL/SSL_Results_$ipaddr:$port.html &&
-		/root/Downloads/Osaft/o-saft.pl +vulns --ignore-no-conn --no-cert --no-dns --no-http --no-openssl --no-sni --no-warning --no-hint --no-header  $ipaddr:$port 2>/dev/null | grep "Lucky" | aha >> /root/Project/Results/SSL/SSL_Results_$ipaddr:$port.html
+		echo "<h2>o-saft.pl +vulns --ignore-no-conn --no-cert --no-dns --no-http --no-openssl --no-sni --no-warning --no-hint --no-header $ipaddr:$port</h2>" >> Results/SSL/SSL_Results_$ipaddr:$port.html &&
+		Osaft/o-saft.pl +vulns --ignore-no-conn --no-cert --no-dns --no-http --no-openssl --no-sni --no-warning --no-hint --no-header  $ipaddr:$port 2>/dev/null | grep "Lucky" | aha >> Results/SSL/SSL_Results_$ipaddr:$port.html
 fi
