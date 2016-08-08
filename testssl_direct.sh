@@ -18,6 +18,7 @@ ip=$1
 Opensslcheck=$2
 ipaddr=$(echo "$ip" | cut -d ":" -f1)
 port=$(echo "$ip" | cut -d ":" -f2)
+path=pwd
 echo $ipaddr
 echo $port
 #Check if conducting new nmap scan or using existing scan
@@ -36,6 +37,7 @@ then
 		Cipherscan/cipherscan --curves --sigalg $ipaddr:$port 2> /dev/null | aha >> Results/SSL/SSL_Results_$ipaddr:$port.html &&
 		echo "<h2>o-saft.pl +vulns --ignore-no-conn --no-cert --no-dns --no-http --no-openssl --no-sni --no-warning --no-hint --no-header $ipaddr:$port</h2>" >> Results/SSL/SSL_Results_$ipaddr:$port.html &&
 		Osaft/o-saft.pl +vulns --ignore-no-conn --no-cert --no-dns --no-http --no-openssl --no-sni --no-warning --no-hint --no-header  $ipaddr:$port 2>/dev/null | grep "Lucky" | aha >> Results/SSL/SSL_Results_$ipaddr:$port.html
+		echo "Results saved to $($path)/Results/SSL/SSL_Results_$ipaddr:$port.html"
 	fi
 
 else
@@ -47,4 +49,5 @@ else
 		Cipherscan/cipherscan --curves --sigalg $ipaddr:$port 2> /dev/null | aha >> Results/SSL/SSL_Results_$ipaddr:$port.html &&
 		echo "<h2>o-saft.pl +vulns --ignore-no-conn --no-cert --no-dns --no-http --no-openssl --no-sni --no-warning --no-hint --no-header $ipaddr:$port</h2>" >> Results/SSL/SSL_Results_$ipaddr:$port.html &&
 		Osaft/o-saft.pl +vulns --ignore-no-conn --no-cert --no-dns --no-http --no-openssl --no-sni --no-warning --no-hint --no-header  $ipaddr:$port 2>/dev/null | grep "Lucky" | aha >> Results/SSL/SSL_Results_$ipaddr:$port.html
+		echo "Results saved to $($path)/Results/SSL/SSL_Results_$ipaddr:$port.html"
 fi
