@@ -1,5 +1,8 @@
 # SSLEnum
-#Description
+##Version
+v0.0.1
+
+##Description
 Scripts utilised for the vulnerability/Compliancy assessment of;
 * SSL/TLS Endpoints
 * RDP Endpoints
