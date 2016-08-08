@@ -24,3 +24,17 @@ Tested on Kali Rolling 2016.1
 git clone https://github/adamliq/SSLEnum.git && cd SSLEnum && chmod +x Install.sh && ./Install.sh
 
 ##Usage
+###Script
+####Testssl_direct
+----
+**Syntax:**
+
+```
+testssl_direct <ipaddress:port> <Skip SSL connectivity check y/n>
+```
+
+**Example:**
+
+```
+testssl_direct 192.168.0.1 n
+```
