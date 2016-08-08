@@ -54,3 +54,18 @@ testssl_fromnmap <nmapxmloutput_Location> <IP range for nmap> <nmap csv output l
 ```
 testssl_fromnmap "/home/nmap_scan.xml" "192.168.1.0/24" "/home/nmap_output.csv" "new"
 ```
+----
+
+####Testssh_direct
+
+**Syntax:**
+
+```
+testssh_direct <IPAddress>:<port>
+```
+
+**Example:**
+
+```
+testssh_direct "192.168.1.0:22"
+```
