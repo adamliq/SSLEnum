@@ -18,6 +18,7 @@ ip=$1
 Opensslcheck=$2
 ipaddr=$(echo "$ip" | cut -d ":" -f1)
 port=$(echo "$ip" | cut -d ":" -f2)
+path=pwd
 echo $ipaddr
 echo $port
 tput setaf 1 ; echo "Running tests on $ipaddr:$port"
@@ -33,4 +34,5 @@ ssh -o BatchMode=yes $ipaddr 2>&1 | grep password | aha >> Results/SSH/SSH_Resul
 echo "<h2>Encryption information</h2>" >> Results/SSH/SSH_Results_$ipaddr:$port.html &&
 echo "<h3>nmap $ipaddr:$port</h3>" >> Results/SSH/SSH_Results_$ipaddr:$port.html &&
 tput setaf 2 ; echo "Checking SSH algorithms and hostkey"
-nmap -p $port --script ssh2-enum-algos,ssh-hostkey --script-args ssh_hostkey=all $ipaddr | aha >> /root/ProjResults/SSH/SSH_Results_$ipaddr:$port.html
+nmap -p $port --script ssh2-enum-algos,ssh-hostkey --script-args ssh_hostkey=all $ipaddr | aha >> Results/SSH/SSH_Results_$ipaddr:$port.html &&
+echo "Completed Scan....Results saved to $($path)/Results/SSH/SSH_Results_$ipaddr:$port.html"

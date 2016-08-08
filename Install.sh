@@ -9,6 +9,7 @@ mkdir aha
 mkdir rdpseccheck
 mkdir Results
 mkdir Results/RDP
+mkdir Results/SSH
 mkdir Results/SSL
 mkdir Osaft
 #Pull required applications from GIT
